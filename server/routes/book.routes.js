@@ -1,4 +1,5 @@
 const express = require("express");
+
 const {
   handleBookStoreController,
   handleBookListController,
@@ -8,9 +9,24 @@ const {
 
 const router = express.Router();
 
-router.post("/addbook", handleBookStoreController);
-router.get("/booklists", handleBookListController);
-router.post("/deletebook", handleBookDeleteController);
-router.put("/updatebook", handleBookUpdateController);
+router.post("/addbook", (req,res,next)=>{
+    console.log("POST /book/addbook HIT ✅");
+    next();
+}, handleBookStoreController);
+
+router.get("/booklists", (req,res,next)=>{
+    console.log("GET /book/booklists HIT ✅");
+    next();
+}, handleBookListController);
+
+router.post("/deletebook", (req,res,next)=>{
+    console.log("POST /book/deletebook HIT ✅");
+    next();
+}, handleBookDeleteController);
+
+router.put("/updatebook", (req,res,next)=>{
+    console.log("PUT /book/updatebook HIT ✅");
+    next();
+}, handleBookUpdateController);
 
 module.exports = router;
