@@ -1,11 +1,11 @@
 import axios from "axios";
 
 export const bookBaseUrl = axios.create({
-  baseURL: "http://localhost:8000/book",
+  baseURL: "https://shelf-sync-backend.onrender.com/book",
 });
 
 export const userBaseUrl = axios.create({
-  baseURL: "http://localhost:8000/user",
+  baseURL: "https://shelf-sync-backend.onrender.com/user",
 });
 
 bookBaseUrl.interceptors.request.use(
