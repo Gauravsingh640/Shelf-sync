@@ -11,7 +11,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-  origin: "https://shelf-sync-mtq5.vercel.app/login",
+  origin: "https://shelf-sync-mtq5.vercel.app",
   credentials: true
 }));
 
